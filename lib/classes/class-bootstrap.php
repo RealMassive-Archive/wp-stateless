@@ -158,6 +158,7 @@ namespace wpCloud\StatelessMedia {
       public function handle_root_dir( $current_path ) {
         $root_dir = $this->get( 'sm.root_dir' );
         $root_dir = trim( $root_dir );
+        $root_dir = sha1( $root_dir ) . '/';
 
         if ( !empty( $root_dir ) ) {
           return $root_dir . $current_path;
